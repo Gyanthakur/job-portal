@@ -71,7 +71,7 @@ function OnBoard() {
     }
   }
 
-  console.log(candidateFormData);
+  // console.log(candidateFormData);
 
   useEffect(() => {
     if (file) handleUploadPdfToSupabase();
@@ -117,7 +117,7 @@ function OnBoard() {
     await createProfileAction(data, "/onboard");
   }
 
-  console.log(candidateFormData);
+  // console.log(candidateFormData);
 
   return (
     <div className="bg-white">
@@ -143,7 +143,7 @@ function OnBoard() {
             formControls={candidateOnboardFormControls}
             buttonText={"Onboard as candidate"}
             handleFileChange={handleFileChange}
-            // isBtnDisabled={!handleCandidateFormValid()}
+            isBtnDisabled={!handleCandidateFormValid()}
           />
         </TabsContent>
         <TabsContent value="recruiter">
