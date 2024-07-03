@@ -24,11 +24,11 @@ function CandidateJobCard({ jobItem, profileInfo, jobApplications }) {
   const { toast } = useToast();
 
   async function handlejobApply() {
-    if (!profileInfo?.isPremiumUser && jobApplications.length >= 2) {
+    if (!profileInfo?.isPremiumUser && jobApplications.length >= 5) {
       setShowJobDetailsDrawer(false);
       toast({
         variant: "destructive",
-        title: "You can apply max 2 jobs.",
+        title: "You can apply max 5 jobs.",
         description: "Please opt for membership to apply for more jobs",
       });
       return;

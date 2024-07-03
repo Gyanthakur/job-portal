@@ -57,7 +57,7 @@ function OnBoard() {
 
   async function handleUploadPdfToSupabase() {
     const { data, error } = await supabaseClient.storage
-      .from("job-board-public")
+      .from('Job-portal-public')
       .upload(`/public/${file.name}`, file, {
         cacheControl: "3600",
         upsert: false,
@@ -95,7 +95,7 @@ function OnBoard() {
       (key) => candidateFormData[key].trim() !== ""
     );
   }
-
+  console.log(candidateFormData);
   async function createProfile() {
     const data =
       currentTab === "candidate"

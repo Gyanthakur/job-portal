@@ -11,8 +11,8 @@ import { createClient } from "@supabase/supabase-js";
 import { createFeedPostAction, updateFeedPostAction } from "@/actions";
 
 const supabaseClient = createClient(
-  "https://ymsijpnegskkoiuerthi.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inltc2lqcG5lZ3Nra29pdWVydGhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQyMzYzNDYsImV4cCI6MjAyOTgxMjM0Nn0.PM7Nr9qTZFEJsf62eHgkFXKGPqt0gfMdFN6SOJjCP6M"
+  "https://qfahxvnvqcriaueuavtg.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFmYWh4dm52cWNyaWF1ZXVhdnRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTk3Njk2MjMsImV4cCI6MjAzNTM0NTYyM30.JNz4t0KcGxQecy40-7dI4BkGezeC41Feth-L7XJ43dI"
 );
 
 function Feed({ user, profileInfo, allFeedPosts }) {
@@ -30,7 +30,7 @@ function Feed({ user, profileInfo, allFeedPosts }) {
 
   function handleFetchImagePublicUrl(getData) {
     const { data } = supabaseClient.storage
-      .from("job-board-public")
+      .from("Job-portal-public")
       .getPublicUrl(getData.path);
 
     console.log(data);
@@ -44,7 +44,7 @@ function Feed({ user, profileInfo, allFeedPosts }) {
 
   async function handleUploadImageToSupabase() {
     const { data, error } = await supabaseClient.storage
-      .from("job-board-public")
+      .from("Job-portal-public")
       .upload(`/public/${imageData?.name}`, imageData, {
         cacheControl: "3600",
         upsert: false,

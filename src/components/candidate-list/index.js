@@ -10,8 +10,8 @@ import {
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseClient = createClient(
-  "https://ymsijpnegskkoiuerthi.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inltc2lqcG5lZ3Nra29pdWVydGhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQyMzYzNDYsImV4cCI6MjAyOTgxMjM0Nn0.PM7Nr9qTZFEJsf62eHgkFXKGPqt0gfMdFN6SOJjCP6M"
+  "https://qfahxvnvqcriaueuavtg.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFmYWh4dm52cWNyaWF1ZXVhdnRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTk3Njk2MjMsImV4cCI6MjAzNTM0NTYyM30.JNz4t0KcGxQecy40-7dI4BkGezeC41Feth-L7XJ43dI"
 );
 
 function CandidateList({
@@ -34,7 +34,7 @@ function CandidateList({
 
   function handlePreviewResume() {
     const { data } = supabaseClient.storage
-      .from("job-board-public")
+      .from("Job-portal-public")
       .getPublicUrl(currentCandidateDetails?.candidateInfo?.resume);
 
     const a = document.createElement("a");
